@@ -15,19 +15,26 @@ namespace Ind2
                 mas[i] = r.Next(-5, 5);
                 if (mas[i] == 0)
                 {
-                    mas[i] = r.Next(-5 ,5);
+                    mas[i] = r.Next(-5, 5);
                     continue;
                 }
             }
+           /* int[] mas = new int[10] {3,-1,1,-4,5,-3,4,-5,3,-1};*/
             for (int i = 0; i < mas.Length; i++)
             {
                 Console.Write(mas[i] + " ");
             }
             int k = 1;
-            int p = 1;
+            if (mas[0] < 0)
+            {
+                for(int i = 0; i < mas.Length; i++)
+                {
+                    mas[i]= mas[i] * (-1);
+                }
+            }
             for (int i = 0; i < mas.Length; i = i + 2)
             {
-                if (i >= mas.Length - 1) 
+                if (i >= mas.Length - 1)
                 {
                     if (mas[i] >= 0)
                     {
@@ -38,37 +45,14 @@ namespace Ind2
                         k = k * 0;
                     }
                     break;
-                } 
-                else if (mas[i] >= 0 & mas[i + 1] < 0) 
+                }
+                else if (mas[i] >= 0 & mas[i + 1] < 0)
                 {
-                    k = k * 1; 
+                    k = k * 1;
                 }
                 else
                 {
                     k = k * 0;
-                }
-            }
-            for (int i = 0; i < mas.Length-1; i = i + 2)
-            {
-                if (i >= mas.Length - 1)
-                {
-                    if (mas[i] < 0)
-                    {
-                        p = p * 1;
-                    }
-                    else
-                    {
-                        p = p * 0;
-                    }
-                    break;
-                }
-                else if(mas[i] < 0 & mas[i + 1] >=  0)
-                {
-                    p = p * 1;
-                }
-                else
-                {
-                    p = p * 0;
                 }
             }
             Console.WriteLine();
