@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Ind1
 {
@@ -35,12 +35,16 @@ namespace Ind1
             }
             for (int p = 0; p < 9; p++)
             {
+                
                 Console.WriteLine();
+                Console.WriteLine(new String('_', 45));
                 for (int j = 0; j < 9; j++)
                 {
-                    Console.Write(s[p, j] + " ");
+                    Console.Write("|" + $"{s[p, j],3}" + "|");
                 }
             }
+            Console.WriteLine();
+            Console.WriteLine(new String('_', 45));
         }
     }
 }
